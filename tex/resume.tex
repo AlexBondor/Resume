@@ -1,0 +1,162 @@
+% LaTeX resume using res.cls
+\documentclass[line,margin]{res} 
+
+\usepackage{hyperref} % Required for links
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\graphicspath{ {img/} }
+\usepackage[absolute,overlay]{textpos}
+
+%----------------------------------------------------------------------------------------
+%	FONTS
+%----------------------------------------------------------------------------------------
+\usepackage{fontspec} % Required for specifying custom fonts in XeLaTeX
+
+\setmainfont[Color=primary, Path = fonts/lato/,BoldItalicFont=Lato-RegIta,BoldFont=Lato-Reg,ItalicFont=Lato-LigIta]{Lato-Lig} % The primary font for content text; defines bold, italic and bold-italic as well
+
+\setsansfont[Scale=MatchLowercase,Mapping=tex-text, Path = fonts/raleway/]{Raleway-ExtraLight} % The font used where \sfffamily is called
+
+%----------------------------------------------------------------------------------------
+%	COLORS
+%----------------------------------------------------------------------------------------
+\usepackage[usenames,dvipsnames]{xcolor} % Required for custom colors
+
+\definecolor{primary}{HTML}{D34527} % The primary document color for content text
+\definecolor{headings}{HTML}{CB173F} % The color of the large sections
+\definecolor{section}{HTML}{CB173F} % The color of the large sections
+\definecolor{subheadings}{HTML}{333333} % The color of subsections and places worked/studied
+\definecolor{date}{HTML}{666666} % The color used for the Last Updated text at the top right
+
+%----------------------------------------------------------------------------------------
+%	MAIN HEADING COMMAND
+%----------------------------------------------------------------------------------------
+\newcommand{\namesection}[3]{ % Defines the command for the main heading
+\raggedright{ % Center the name
+\fontsize{40pt}{50pt} % Font size
+\fontspec[Path = fonts/lato/]{Lato-Hai}\selectfont #1 % First name font
+\fontspec[Path = fonts/lato/]{Lato-Lig}\selectfont #2 % Last name font
+} \\[5pt] % Whitespace between the name and contact information
+{ % Center the contact information
+\color{subheadings} % Use the headings color
+\fontspec[Path = fonts/raleway/]{Raleway-Medium}\fontsize{10pt}{12pt}\selectfont #3} % Contact information font
+}
+
+\begin{document}
+\begin{textblock}{2}(-2.1,0.2)
+      \includegraphics[scale=0.1015]{me}
+    \end{textblock}
+\begin{flushleft}
+\namesection{Alexandru} {Bondor} {
+\href{mailto:alexandru.viorel.bondor@gmail.com}{alexandru.viorel.bondor@gmail.com}\hspace{0.2cm}\textbullet \hspace{0.2cm} +40 751 956 103\hspace{0.2cm}\textbullet\hspace{0.2cm}\urlstyle{same}\url{http://alexbondor.me}
+}
+\end{flushleft}
+\begin{resume}
+
+\section{\color{section} SUMMARY}
+\justify
+{\color{headings} \large \sl \textbf{Do-It-Yourself-er..}} I enjoy building stuff. I create software applications and automated systems like robots or any kind of brainy computing stuff.
+
+\section{\color{section} PROJECTS} 
+\justify
+{\color{headings} \large \sl \textbf{\href{https://www.facebook.com/MatrixRobots/}{roboT - RoboChallenge Bucharest}}} {\scriptsize October 2015} \\
+Second attempt to build a sumo robot. Way more successful than the first try with "Sumozaurus". Competed against first and second world wide sumo robot 2014 champions in an international competition which took place in Bucharest, Romania.
+\vspace{0.2cm}
+\newline
+{\color{headings}\large \sl \textbf{\urlstyle{same}\url{www.grouptickets.nl}}} {\scriptsize May 2015} \\
+I have developed a platform from scratch where people could search/create/join/share groups in order to travel with NS dutch train company. People were using large Facebook groups in order to perform these actions and the platform I have created was meant to make it easier for them to do this. The website created a lot of fuzz in the \textbf{dutch media} and attracted more than \textbf{70k users} and thus it was of interest for the NS dutch train company.
+\vspace{0.2cm}
+\newline
+{\color{headings}\large \sl \textbf{\href{http://www.edelgroup.nl/nl-nl/lisa_detectionfloor_nl}{Minor IT Innovations}}} {\scriptsize February 2015} \\
+I have developed this project together with other three dutch students as a part of my Erasmus exchange program in Zwolle, the Netherlands. We have researched the possibilities and applications of a smart floor. A smart floor detects motion and can for example be used in health care facilities or nursing homes to detect if, for example, somebody falls on the floor. We have developed a tool which calculates the optimal way to place the various types of tiles in a specific sized room, taking into account all conditions and the cost of each component.
+\vspace{0.2cm}
+\newline
+{\color{headings}\large \sl \textbf{\href{https://github.com/robikovacs/mosquito-quadcopter}{Mosquito - Digilent Design Contest 2014}}} {\scriptsize May 2014} \\
+Autonomous quadcopter built with custom handmade frame, neat power distribution board, wireless control, sensors and much more. Did a lot of tweaking of the PID controller and the final result was not that far away from a working product.
+\vspace{0.2cm}
+\newline
+{\color{headings}\large \sl \textbf{\href{https://github.com/AlexBondor/Escape-Mars-XNA}{Escape Mars - XNA}}} {\scriptsize June 2015} \\
+As a result of following the course Artificial Intelligence in Games at Windesheim UAS, the Netherlands I have build a small 2D game/simulation using the XNA framework. The simulation illustrates basic artificial intelligence principles used in games.
+
+\section{\color{section} REWARDS} 
+\justify
+{\color{headings}\large \sl \textbf{\href{https://github.com/AlexBondor/Escape-Mars-XNA}{Yardi Scholarship Program - Rewarding Academic Excellence}}} {\scriptsize January 2016} \\
+Yardi describes this as follows: "As part of our commitment to support the academia, we're offering 3 scholarships, each worth 1,350 euros for brainiac Computer Science students."
+\vspace{0.2cm}
+\newline
+{\color{headings}\large \sl \textbf{Top 100 projects - Koding Hackathon}} {\scriptsize December 2014} \\
+Made it to the top 100 projects out of a total of 1000 registered teams. The theme of the hackathon was: No one reads the fine print (i.e. TOS, EULA, legal documents) anymore yet every site has them. Devise a creative/interactive solution for this problem.
+
+\newpage
+
+\section{\color{section} REWARDS} 
+\justify
+{\color{headings}\large \sl \textbf{2nd place - EBEC}} {\scriptsize August 2014} \\
+It is an engineering competitions between technical universities from Europe. We have won both local and regional rounds and we have obtained second place at the final round. 
+For the final round we had to build a musical instrument and then a fire and water proof computer cage and we had 24h for this.
+\vspace{0.2cm}
+\newline
+{\color{headings}\large \sl \textbf{3rd place - Imprezzio Software Contest}} {\scriptsize November 2013} \\
+I have developed a home automation system. I have used sensors and custom build hardware which were read and controlled from a web interface built using .NET framework.
+\vspace{0.2cm}
+\newline
+{\color{headings}\large \sl \textbf{\href{https://github.com/AlexBondor/TurnMeOff-Web}{2nd Place - Microsoft National Mobile Hackathon}}} {\scriptsize November 2013} \\
+54 hour Hackathon, we've built an Educational App for tablets that enabled high-school students to learn physics using new and interactive methods.
+
+\section{\color{section} EXPERIENCE}
+\justify
+{\color{headings}\large \sl \textbf{\href{https://www.catalysts.cc/en/}{Intern - Catalysts GmbH}}} {\scriptsize August - October 2015 (3 months)} \\
+Using Java Spring framework and a bit of AngularJS in the development of an application.
+\vspace{0.2cm}
+\newline
+{\color{headings}\large \sl \textbf{\href{https://www.evozon.com/}{Intern - Evozon}}} {\scriptsize July - August 2014 (2 months)} \\
+Working in a team to develop an application which manages interview questions for new interns in both .NET and Sharepoint.
+\vspace{0.2cm}
+\newline
+{\color{headings}\large \sl \textbf{\href{http://www.bitdefender.ro/}{Trainee - Bitdefender}}} {\scriptsize March 2014 (1 month)} \\
+Developed a basic antivirus and a registry scanner in C. The applications involved multithreading and threads synchronization. Gathered some knowledge about the Python programming language.
+
+\section{\color{section} EDUCATION}
+\justify
+{\color{headings}\large \sl \textbf{\href{http://www.utcluj.ro/}{Technical University of Cluj-Napoca}}} {\scriptsize 2012 - 2016} \\
+Following my Bachelors' Degree in Computer Sciences at English branch.
+\vspace{0.2cm}
+\newline
+{\color{headings}\large \sl \textbf{\href{http://www.windesheiminternational.nl/}{Windesheim University of Applied Sciences}}} {\scriptsize February - June 2015} \\
+I followed the IT Innovations minor as an Erasmus exchange student.
+\vspace{0.2cm}
+\newline
+{\color{headings}\large \sl \textbf{\href{http://ler.ubbcluj.ro/}{"Emil Racovita" High School}}} {\scriptsize 2000 - 2012} \\
+Primary and high-school education.
+
+\section{\color{section} SKILLS}
+\justify
+C\# \textbullet \hspace{0.1cm} 
+C/C++ \textbullet \hspace{0.1cm} 
+PHP \textbullet \hspace{0.1cm} 
+Laravel \textbullet \hspace{0.1cm}
+Java \textbullet \hspace{0.1cm}
+Microcontrollers \textbullet \hspace{0.1cm}
+Linux \textbullet \hspace{0.1cm}
+Scrum \textbullet \hspace{0.1cm}
+Public speaking \textbullet \hspace{0.1cm}
+Team management
+
+\section{\color{section} VOLUNTEERING}
+\justify
+RITTO (2009 - 2010) \textbullet \hspace{0.1cm}
+TIFF (2011) \textbullet \hspace{0.1cm}
+Let's do it Romania (2010) \textbullet \hspace{0.1cm}
+Comedy Cluj (2010)
+
+\section{\color{section} LANGUAGES}
+\justify
+English \textbullet \hspace{0.1cm} 
+Romanian
+
+\section{\color{section} OTHERS}
+\justify
+B1/C1 driving licence \textbullet \hspace{0.1cm} 
+playing the bass guitar as a hobby
+
+\end{resume}
+\end{document}
